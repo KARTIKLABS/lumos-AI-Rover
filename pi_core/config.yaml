@@ -1,0 +1,36 @@
+# Autonomous Campus Rover - Main Configuration
+
+# Serial Communication with ESP32
+serial:
+  port: "/dev/ttyUSB0"   # Change to /dev/ttyACM0 if needed depending on ESP32 chip
+  baudrate: 115200
+  timeout: 1.0
+
+# Camera System
+camera:
+  index: 0               # /dev/video0
+  width: 640
+  height: 480
+  fps: 30
+
+# Web Dashboard API
+dashboard:
+  host: "0.0.0.0"
+  port: 8000
+
+# Vision & AI
+ai:
+  model_path: "yolov8n.pt"  # Nano model for fast inference on Pi CPU
+  confidence_threshold: 0.5
+  target_classes:
+    - "person"
+
+# Navigation
+navigation:
+  max_speed_pwm: 200     # 0-255
+  turn_speed_pwm: 150
+  obstacle_distance_cm: 40
+
+# Thermal
+thermal:
+  cpu_temp_limit: 75.0   # Degrees C

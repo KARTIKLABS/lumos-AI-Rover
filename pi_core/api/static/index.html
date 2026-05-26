@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover Command Center</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="top-bar">
+            <h1>CAMPUS ROVER // <span>COMMAND CENTER</span></h1>
+            <div class="status-indicator">
+                <span class="pulse"></span>
+                <span id="conn-status">CONNECTING...</span>
+            </div>
+        </header>
+
+        <main class="grid-container">
+            <!-- Camera Feed -->
+            <section class="panel camera-panel">
+                <h2>Live Feed</h2>
+                <div class="video-container">
+                    <img src="/video_feed" alt="Rover Camera Stream" id="video-stream">
+                    <div class="overlay-hud">
+                        <div class="crosshair"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Telemetry Data -->
+            <section class="panel telemetry-panel">
+                <h2>System Telemetry</h2>
+                <div class="metrics">
+                    <div class="metric-card">
+                        <span class="label">Battery</span>
+                        <span class="value" id="batt-val">-- V</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="label">Core Temp</span>
+                        <span class="value" id="temp-val">-- &deg;C</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="label">Front Sonar</span>
+                        <span class="value" id="sonar-f-val">-- cm</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="label">Rear Sonar</span>
+                        <span class="value" id="sonar-r-val">-- cm</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="panel control-panel">
+                <h2>Manual Override</h2>
+                <div class="controls">
+                    <div class="d-pad">
+                        <button class="btn-dir" id="btn-up" data-dir="forward">&#9650;</button>
+                        <div class="horizontal">
+                            <button class="btn-dir" id="btn-left" data-dir="left">&#9664;</button>
+                            <button class="btn-stop" id="btn-stop" data-dir="stop">STOP</button>
+                            <button class="btn-dir" id="btn-right" data-dir="right">&#9654;</button>
+                        </div>
+                        <button class="btn-dir" id="btn-down" data-dir="backward">&#9660;</button>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn-action" id="btn-lock">TOGGLE PARCEL LOCK</button>
+                        <button class="btn-action danger" id="btn-estop">EMERGENCY STOP</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>

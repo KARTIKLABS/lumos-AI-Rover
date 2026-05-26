@@ -1,0 +1,19 @@
+# FastAPI and Web Dashboard
+fastapi>=0.103.0
+uvicorn>=0.23.2
+websockets>=11.0.3
+
+# Hardware & Serial
+pyserial>=3.5
+
+# Computer Vision & AI
+opencv-python-headless>=4.8.0
+numpy>=1.24.3
+ultralytics>=8.0.0  # YOLOv8 for human/object detection
+
+# Audio (PyAudio may require portaudio system library)
+pyaudio>=0.2.13
+pyttsx3>=2.90     # Text to Speech for greetings
+
+# Config Parsing
+PyYAML>=6.0.1
